@@ -4,7 +4,7 @@ local vim = vim
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 
 local cyber_url
-if vim.g.cyber-debug == "true" then
+if vim.g.cyber-debug == true then
   cyber_url = "../tree-sitter-cyber/"
 else
   cyber_url = "https://github.com/instance-id/nvim-cyber-treesitter"
