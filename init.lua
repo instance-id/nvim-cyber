@@ -1,9 +1,18 @@
+local vim = vim
+
 -- init.lua
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 
+local cyber_url
+if vim.g.cyber-debug == "true" then
+  cyber_url = "../tree-sitter-cyber/"
+else
+  cyber_url = "https://github.com/instance-id/nvim-cyber-treesitter"
+end
+
 parser_config.cyber = {
   install_info = {
-    url = "https://github.com/instance-id/nvim-cyber-treesitter",
+    url = cyber_url,
     files = {"src/parser.c"},
   },
   filetype = "cyber",
