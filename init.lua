@@ -7,7 +7,7 @@ local cyber_url
 if vim.g.cyber_debug == true then
   cyber_url = "../tree-sitter-cyber/"
 else
-  cyber_url = "https://github.com/instance-id/nvim-cyber-treesitter"
+  cyber_url = "https://github.com/instance-id/tree-sitter-cyber"
 end
 
 parser_config.cyber = {
