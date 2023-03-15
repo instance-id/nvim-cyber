@@ -14,6 +14,7 @@ parser_config.cyber = {
   install_info = {
     url = cyber_url,
     files = {"src/parser.c"},
+    branch = "main",
   },
   filetype = "cyber",
   used_by = {"cy", "cyon", "cys"}
