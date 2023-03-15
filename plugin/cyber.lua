@@ -19,6 +19,15 @@ parser_config.cyber = {
   used_by = {"cy", "cyon", "cys"}
 }
 
+vim.filetype.add({
+  extension = {
+      cyber = "cyber",
+      cyon = "cyber",
+      cys = "cyber",
+      cy = "cyber"
+  }
+})
+
 local configs = require "nvim-treesitter.configs"
 configs.setup {
   ensure_installed = "cyber",
