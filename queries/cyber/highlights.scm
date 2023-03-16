@@ -1,25 +1,23 @@
-; Keywords
-((keyword) @keyword)
-
 ; Identifiers
-((identifier) @variable)
+(identifier) @variable
 
 ; Shebang
-((shebang) @comment)
+(shebang) @comment
 
 ; Comment
-((comment) @comment)
+(comment) @comment
 
 ; Import statement
-((import_statement) @include)
+(import_statement
+  "import" @include)
 
-; Function declarations
-((func_declaration
-  identifier: (identifier) @function))
+; Function definition
+(function_definition
+  "func" @function)
 
 ; Function calls
-((function_call
-  identifier: (identifier) @function))
+(function_call
+  (identifier) @function)
 
 ; Punctuation
 ((function_call
@@ -37,52 +35,60 @@
   "}" @punctuation))
 
 ; Object declaration
-((object_declaration) @class)
+(object_declaration
+  "object" @class)
 
 ; Field declaration
-((field_declaration) @property)
+(field_declaration
+  (type_identifier) @property)
 
 ; Parameter list
-((parameter_list) @parameter)
+(parameter_list
+  (parameter) @parameter)
 
 ; Var declaration
-((var_declaration) @variable)
+(var_declaration
+  "var" @variable)
 
 ; Block
-((block) @block)
+(block)
 
 ; If statement
-((if_statement
-  "if" @keyword
-  "else" @keyword))
+(if_statement
+  "if" @keyword)
+
+; Else Clause
+(else_clause
+  "else" @keyword)
 
 ; Loop statement
-((loop_statement
-  "loop" @keyword))
+(loop_statement
+  "loop" @keyword)
 
 ; For loop
-((for_loop
+(for_loop
   "for" @keyword
-  "each" @keyword))
+  "each" @keyword)
 
 ; Assignment statement
-((assignment_statement) @operator)
+(assignment_statement
+  "=" @operator)
 
 ; Expression statement
-((expression_statement) @statement)
+(expression_statement)
 
 ; Number
-((number) @number)
+(number) @number
 
 ; String
-((string) @string)
+(string) @string
 
 ; List expression
-((list_expression) @list)
+(list_expression)
 
 ; Map expression
-((map_expression) @dictionary)
+(map_expression)
 
 ; Tag expression
-((tag_expression
-  "#" @tag))
+(tag_expression
+  "#" @tag)
