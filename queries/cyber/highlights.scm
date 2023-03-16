@@ -1,57 +1,88 @@
-; highlights.scm
-[
-  (shebang) @comment
-]
+; Keywords
+((keyword) @keyword)
 
-[
-  (comment) @comment
-]
+; Identifiers
+((identifier) @variable)
 
-[
-  (import_statement)
-  "import" @keyword
-]
+; Shebang
+((shebang) @comment)
 
-[
-  (alias) @string
-]
+; Comment
+((comment) @comment)
 
-[
-  (assignment)
-  "=" @operator
-]
+; Import statement
+((import_statement) @include)
 
-[
-  (function_call
-   "(" @punctuation.bracket
-   ")" @punctuation.bracket)
-]
+; Function declarations
+((func_declaration
+  identifier: (identifier) @function))
 
-[
-  (string) @string
-]
+; Function calls
+((function_call
+  identifier: (identifier) @function))
 
-[
-  (map
-   "{" @punctuation.bracket
-   "}" @punctuation.bracket)
-]
+; Punctuation
+((function_call
+  "(" @punctuation
+  ")" @punctuation))
+((argument_list
+  "," @punctuation))
+((key_value_pair
+  ":" @punctuation))
+((list_expression
+  "[" @punctuation
+  "]" @punctuation))
+((map_expression
+  "{" @punctuation
+  "}" @punctuation))
 
-[
-  (key_value
-   ":" @operator)
-]
+; Object declaration
+((object_declaration) @class)
 
-[
-  (if_statement
-   "if" @conditional
-   ":" @punctuation.separator)
-]
+; Field declaration
+((field_declaration) @property)
 
-[
-  (function_definition
-   "func" @function
-   (parameters
-    "(" @punctuation.bracket
-    ")" @punctuation.bracket))
-]
+; Parameter list
+((parameter_list) @parameter)
+
+; Var declaration
+((var_declaration) @variable)
+
+; Block
+((block) @block)
+
+; If statement
+((if_statement
+  "if" @keyword
+  "else" @keyword))
+
+; Loop statement
+((loop_statement
+  "loop" @keyword))
+
+; For loop
+((for_loop
+  "for" @keyword
+  "each" @keyword))
+
+; Assignment statement
+((assignment_statement) @operator)
+
+; Expression statement
+((expression_statement) @statement)
+
+; Number
+((number) @number)
+
+; String
+((string) @string)
+
+; List expression
+((list_expression) @list)
+
+; Map expression
+((map_expression) @dictionary)
+
+; Tag expression
+((tag_expression
+  "#" @tag))
