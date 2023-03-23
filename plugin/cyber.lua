@@ -13,7 +13,10 @@ end
 parser_config.cyber = {
   install_info = {
     url = cyber_url,
-    files = {"src/parser.c"},
+    files = {
+      "src/parser.c",
+      "src/scanner.cc"
+    },
     branch = "main",
   },
   filetype = "cyber",
