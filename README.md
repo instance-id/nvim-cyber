@@ -24,4 +24,4 @@ Plug 'instance-id/nvim-cyber', { 'do': ':TSInstall cyber' }
 ``` 
 
 
-![](https://img.instance.id/GuFIvWFUk6IQ/direct)
+![](https://img.instance.id/KwnQDoJZk95f/direct)
